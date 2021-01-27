@@ -1,0 +1,27 @@
+name: 'A comple Job v1'
+on:
+  workflow_dispatch:
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          touch /tmp/setup.txt
+          echo "setup..." > /tmp/setup.txt
+          ls /tmp
+  build:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          touch /tmp/build.txt
+          echo "build..." > /tmp/build.txt
+          ls /tmp
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          touch /tmp/test.txt
+          echo "test..." > /tmp/test.txt
+          ls /tmp
