@@ -1,4 +1,4 @@
-name: 'A comple Job v1'
+name: 'A comple Job v2'
 on:
   workflow_dispatch:
 jobs:
